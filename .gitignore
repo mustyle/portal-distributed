@@ -1,0 +1,14 @@
+/portal-parent/*.iml
+/portal-parent/.idea
+/portal-common/target
+/portal-common/*.iml
+/portal-manager/*.iml
+/portal-manager/portal-manager-dao/target
+/portal-manager/portal-manager-dao/*.iml
+/portal-manager/portal-manager-pojo/target
+/portal-manager/portal-manager-pojo/*.iml
+/portal-manager/portal-manager-service/target
+/portal-manager/portal-manager-service/*.iml
+/portal-manager/portal-manager-web/target
+/portal-manager/portal-manager-web/*.iml
+
