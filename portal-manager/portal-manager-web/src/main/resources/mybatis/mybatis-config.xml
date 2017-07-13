@@ -9,4 +9,10 @@
         <setting name="defaultStatementTimeout" value="25000"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="properties" value="mysql"/>
+        </plugin>
+    </plugins>
 </configuration>

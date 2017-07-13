@@ -1,6 +1,9 @@
 package org.portal.service.impl;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.portal.common.pojo.DataGridResult;
 import org.portal.mapper.ItemMapper;
 import org.portal.pojo.Item;
 import org.portal.pojo.ItemExample;
@@ -35,5 +38,23 @@ public class ItemServiceImpl implements ItemService {
         }
 
         return item;
+    }
+
+    @Override
+    public DataGridResult getItemList(int page, int rows) {
+        // 分页处理
+        PageHelper.startPage(page, rows);
+
+        // 执行查询
+        ItemExample example = new ItemExample();
+        List<Item> itemList = itemMapper.selectByExample(example);
+
+        PageInfo<Item> pageInfo = new PageInfo<>(itemList);
+
+        DataGridResult dataGridResult = new DataGridResult();
+        dataGridResult.setTotal(pageInfo.getTotal());
+        dataGridResult.setRows(itemList);
+
+        return dataGridResult;
     }
 }
